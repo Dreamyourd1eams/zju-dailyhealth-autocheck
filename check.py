@@ -4,22 +4,10 @@ import json
 import datetime
 import time
 import os
-import ddddocr
+
 import random
 from tgpush import post_tg
 from Dingpush import dingpush
-
-ocr = ddddocr.DdddOcr(det=False, ocr=True)
-
-
-def cope_with_captcha(sess):
-    """识别验证码"""
-    response = sess.get('https://healthreport.zju.edu.cn/ncov/wap/default/code')
-    # img_bytes = response.content
-    # with open("captcha.png", "wb") as f:
-    #     f.write(img_bytes)
-    res = ocr.classification(response.content)
-    return res.upper()
 
 
 #签到程序模块
